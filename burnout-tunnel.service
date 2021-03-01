@@ -1,0 +1,19 @@
+[Unit]
+Description=Brings a reverse ssh tunnel up towards burnout
+Requires=network.target
+After=lightdm.service
+
+StartLimitIntervalSec=600s
+StartLimitBurst=50
+
+[Service]
+ExecStart=/home/techniek/Desktop/tunnel-naar-ccdefactorij.sh
+Restart=always
+RestartSec=10s
+TimeoutSec=120s
+
+User=techniek
+Group=techniek
+
+[Install]
+WantedBy=multi-user.target
